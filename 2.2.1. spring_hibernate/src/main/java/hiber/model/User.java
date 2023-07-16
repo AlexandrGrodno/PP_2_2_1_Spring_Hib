@@ -18,6 +18,12 @@ public class User {
 
    @Column(name = "email")
    private String email;
+   @Column(name = "car_id")
+   private Long car_id;
+
+
+   }
+
 
    public User() {}
    
@@ -58,4 +64,10 @@ public class User {
    public void setEmail(String email) {
       this.email = email;
    }
+   public Long getCar_id() {
+      return car_id;
+   }
+
+   public void setCar_id(Long car_id) {
+      this.car_id = car_id;}
 }
