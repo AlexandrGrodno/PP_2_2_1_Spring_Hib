@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface UserDao {
    void add(User user);
-   User findUser(String model, int series);
+   List<User> findUser(String model, int series);
    List<User> listUsers();
 }

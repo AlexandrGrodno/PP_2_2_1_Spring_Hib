@@ -19,10 +19,15 @@ public class UserDaoImp implements UserDao {
       sessionFactory.getCurrentSession().save(user);
    }
 
-   @Override
-   public User findUser(String model, int series) {
 
-      return null;
+   @Override
+   public List<User> findUser(String model, int series) {
+      String hql="from User user where  user.userCar.model =: model " +
+              "and user.userCar.series =: series";
+
+      return sessionFactory.getCurrentSession().createQuery(hql)
+              .setParameter("model",model).setParameter("series",series).getResultList();
+
    }
 
    @Override
